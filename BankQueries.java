@@ -1,10 +1,3 @@
-// BankQueries.java
-// Refactored version — variables, method names, and class structure updated for clarity
-// Original logic preserved
-
-// BankQueries.java
-// Refactored version - retains original logic with updated structure and naming
-
 import java.sql.*;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -19,9 +12,6 @@ public class BankQueries {
 	JFrame frame;
 
 	public static void main(String[] args) {
-        // Entry point of BankQueries {
-		// TODO Auto-generated method stub
-		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -46,10 +36,9 @@ public class BankQueries {
 		frame.getContentPane().setLayout(null);
 		
 		
-		Database.connect(); // Establish connection to database
-		setupClosingDBConnection(); // Handles closing the database connection if the user closes the program
-		
-		//calls the buttons 
+		Database.connect();
+		setupClosingDBConnection(); 
+		 
 		customerAccountButton();
 		signInButton();
 		appointmentButton();
@@ -57,10 +46,6 @@ public class BankQueries {
 	
 	}
 	
-
-	
-	
-	// Handles closing the database connection if the user closes the program
 		public static void setupClosingDBConnection() {
 			Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
 		        public void run() {
@@ -72,10 +57,10 @@ public class BankQueries {
 		
 		public static void getNumberOfRows() {
 			try {
-				Connection connection = Database.connection; // Connect to database
-				String query = "SELECT COUNT(*) FROM Customers"; // Enter the query
-				Statement stm = connection.createStatement(); // Create statement
-				ResultSet result = stm.executeQuery(query); // Execute the query
+				Connection connection = Database.connection; 
+				String query = "SELECT COUNT(*) FROM Customers"; 
+				Statement stm = connection.createStatement(); 
+				ResultSet result = stm.executeQuery(query); 
 				
 				while (result.next()) {
 					System.out.print("Number of rows in Customers table: " + result.getInt("COUNT(*)"));
@@ -89,10 +74,10 @@ public class BankQueries {
 		//get methods
 		public static void getCustomers() {
 			try {
-				Connection connection = Database.connection; // Connect to database
-				String query = "SELECT * FROM Customers WHERE customer_name = '" + "Thomas Tank" + "'"; // Enter the query
-				Statement stm = connection.createStatement(); // Create statement
-				ResultSet result = stm.executeQuery(query); // Execute the query
+				Connection connection = Database.connection; 
+				String query = "SELECT * FROM Customers WHERE customer_name = '" + "Thomas Tank" + "'"; 
+				Statement stm = connection.createStatement(); 
+				ResultSet result = stm.executeQuery(query); 
 				
 				while (result.next()) {
 					System.out.print("Customer ID: " + result.getInt("customer_id"));
@@ -108,10 +93,10 @@ public class BankQueries {
 		}
 		public static void getEmployees() {
 			try {
-				Connection connection = Database.connection; // Connect to database
-				String query = "SELECT * FROM Employees WHERE employee_name = '" + "Thomas Tank" + "'"; // Enter the query
-				Statement stm = connection.createStatement(); // Create statement
-				ResultSet result = stm.executeQuery(query); // Execute the query
+				Connection connection = Database.connection; 
+				String query = "SELECT * FROM Employees WHERE employee_name = '" + "Thomas Tank" + "'"; 
+				Statement stm = connection.createStatement(); 
+				ResultSet result = stm.executeQuery(query); 
 				
 				while (result.next()) {
 					System.out.print("Employee ID: " + result.getInt("employee_id"));
@@ -126,10 +111,10 @@ public class BankQueries {
 		}
 		public static void getAdmin() {
 			try {
-				Connection connection = Database.connection; // Connect to database
-				String query = "SELECT * FROM Admin WHERE admin_name = '" + "Thomas Tank" + "'"; // Enter the query
-				Statement stm = connection.createStatement(); // Create statement
-				ResultSet result = stm.executeQuery(query); // Execute the query
+				Connection connection = Database.connection; 
+				String query = "SELECT * FROM Admin WHERE admin_name = '" + "Thomas Tank" + "'"; 
+				Statement stm = connection.createStatement(); 
+				ResultSet result = stm.executeQuery(query); 
 				
 				while (result.next()) {
 					System.out.print("Admin ID: " + result.getInt("admin_id"));
@@ -144,10 +129,10 @@ public class BankQueries {
 		}
 	public static void getBankAccount() {
 			try {
-				Connection connection = Database.connection; // Connect to database
-				String query = "SELECT * FROM BankAccounts WHERE bankaccount_id = '1'"; // Enter the query
-				Statement stm = connection.createStatement(); // Create statement
-				ResultSet result = stm.executeQuery(query); // Execute the query
+				Connection connection = Database.connection; 
+				String query = "SELECT * FROM BankAccounts WHERE bankaccount_id = '1'"; 
+				Statement stm = connection.createStatement(); 
+				ResultSet result = stm.executeQuery(query); 
 				
 				while (result.next()) {
 					System.out.print("Bank Account ID: " + result.getInt("bankaccount_id"));
@@ -178,9 +163,6 @@ public class BankQueries {
 			
 		}
 
-		
-		
-		//Buttons for main menu
 		public void customerAccountButton() {
 			JButton button1 = new JButton("Create Customer Account");
 			button1.setBounds(62,53,310,29);
@@ -189,7 +171,6 @@ public class BankQueries {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
 					goToCustomerPage();
 				}
 				
@@ -206,7 +187,6 @@ public class BankQueries {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
 					signInPage();
 				}
 				
@@ -222,7 +202,6 @@ public class BankQueries {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
 					appointmentPage();
 				}
 				
@@ -238,15 +217,12 @@ public class BankQueries {
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
 					employeePage();
 				}
 				
 			});
 		}
 		
-		
-		//frame changers
 		public void goToCustomerPage()
 		{
 			frame.dispose();
