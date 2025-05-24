@@ -1,10 +1,3 @@
-// EmployeeLogin.java
-// Refactored version — variables, method names, and class structure updated for clarity
-// Original logic preserved
-
-// EmployeeLogin.java
-// Refactored version - retains original logic with updated structure and naming
-
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,11 +18,7 @@ public class EmployeeLogin {
 	private JTextField userNameTF;
 	private JTextField passwordTF;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
-        // Entry point of EmployeeLogin {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -42,16 +31,10 @@ public class EmployeeLogin {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public employeeSignInUI() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	public void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -65,8 +48,8 @@ public class EmployeeLogin {
 		pWordTF();	
 		createSignInButton();
 	}
+
 	
-	//frames
 	public void homePage() {
 		frame.dispose();
 		VariousQueriesAndScannerFinalProject main = new VariousQueriesAndScannerFinalProject();
@@ -84,7 +67,6 @@ public class EmployeeLogin {
 		
 	}
 	
-	//creating labels
 	public void employeeSignInLabel() {
 		JLabel EmployeeTitle = new JLabel("Employee Sign in");
 		EmployeeTitle.setBounds(148, 19, 130, 16);
@@ -104,8 +86,7 @@ public class EmployeeLogin {
 		passwordLabel.setBounds(183, 154, 61, 16);
 		frame.getContentPane().add(passwordLabel);
 	}
-	
-	//creating text fields
+
 	public void uNameTF() {
 		userNameTF = new JTextField();
 		userNameTF.setBounds(148, 85, 130, 26);
@@ -121,7 +102,6 @@ public class EmployeeLogin {
 		passwordTF.setColumns(10);	
 	}
 	
-	//creating buttons
 	public void createBackButton() {
 		JButton backBT = new JButton("< Back");
 		backBT.setBounds(6, 237, 117, 29);
@@ -146,9 +126,7 @@ public class EmployeeLogin {
 		});
 		
 	}
-
 	
-	//uses query to compare if username and password matches these varaibles in the database
 	public void signInButton() {
 		try {
 			frame.dispose();
