@@ -1,10 +1,3 @@
-// BankDatabase.java
-// Refactored version — variables, method names, and class structure updated for clarity
-// Original logic preserved
-
-// BankDatabase.java
-// Refactored version - retains original logic with updated structure and naming
-
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
