@@ -1,10 +1,3 @@
-// CustomerAccount.java
-// Refactored version — variables, method names, and class structure updated for clarity
-// Original logic preserved
-
-// CustomerAccount.java
-// Refactored version - retains original logic with updated structure and naming
-
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,11 +18,7 @@ public class CustomerAccount {
 	private JTextField textField_2;
 	private JTextField textField_3;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
-        // Entry point of CustomerAccount {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -42,16 +31,10 @@ public class CustomerAccount {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public customerAccountUI() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -70,8 +53,6 @@ public class CustomerAccount {
 		createAddressTF();
 	}
 	
-	
-		//creating buttons
 		public void createAddCustomerButton() {
 		
 		JButton btnNewButton = new JButton("Create ");
@@ -97,8 +78,6 @@ public class CustomerAccount {
 			
 		}
 		
-		
-		//creates labels
 		public void createUserNameLabel() {
 			JLabel lblNewLabel = new JLabel("Username");
 			lblNewLabel.setBounds(186, 10, 90, 16);
@@ -125,8 +104,6 @@ public class CustomerAccount {
 		frame.getContentPane().add(lblNewLabel_3);
 		}
 		
-		
-		//creates text field
 		public void createUserNameTF() {
 			textField = new JTextField();
 			textField.setBounds(123, 23, 188, 26);
@@ -156,7 +133,6 @@ public class CustomerAccount {
 		}
 		
 		
-		//frame Changer
 		public void homePage() {
 			frame.dispose();
 			VariousQueriesAndScannerFinalProject main = new VariousQueriesAndScannerFinalProject();
@@ -164,14 +140,8 @@ public class CustomerAccount {
 			main.frame.setVisible(true);
 			
 		}
-		
-		
-		
-		
-		//random number for id
 		int random = (int) (Math.random()*49 + 1);
 		
-		//uses query to send data to database
 		public void addCustomer() {
 			try {
 				Connection connection = Database.connection;
@@ -187,7 +157,6 @@ public class CustomerAccount {
 				stm.setInt(6, random);
 				stm.executeUpdate();
 				
-				// The line below is ran if the query executes successfully. It shows a JOptionPane (an alert) telling the user that the patient has been added to the database.
 				JOptionPane.showMessageDialog(null, "The new customer was added to the database!", "Customer Added!", JOptionPane.DEFAULT_OPTION);
 			} catch (Exception e) {
 				System.out.print(e);
