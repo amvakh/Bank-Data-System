@@ -1,4 +1,4 @@
-realistic_readme = """# Bank Management System
+# Bank Management System
 
 This is a console-based Java application that simulates a basic banking system. It includes modules for user login (both customer and employee), bank account management, appointment scheduling, and basic queries. The project was originally built for academic purposes and later refactored to improve clarity, organization, and readability.
 
