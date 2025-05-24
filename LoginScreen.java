@@ -1,12 +1,4 @@
-// LoginScreen.java
-// Refactored version — variables, method names, and class structure updated for clarity
-// Original logic preserved
-
-// LoginScreen.java
-// Refactored version - retains original logic with updated structure and naming
-
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -26,11 +18,7 @@ public class LoginScreen {
 	private JTextField textField;
 	private JTextField textField_1;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
-        // Entry point of LoginScreen {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -43,23 +31,16 @@ public class LoginScreen {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public signInUI() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		//calls functions
 		createSignInButton();
 		createUserNameLabel();
 		createUserNameTF();
@@ -69,7 +50,6 @@ public class LoginScreen {
 	
 	}
 	
-	//creating button
 	public void createSignInButton() {
 		JButton btnNewButton = new JButton("Sign In");
 		btnNewButton.setBounds(168, 174, 117, 29);
@@ -94,8 +74,6 @@ public class LoginScreen {
 	});
 	
 }
-	
-	//creates labels
 	public void createUserNameLabel()
 	{
 		JLabel lblNewLabel = new JLabel("Username");
@@ -108,8 +86,7 @@ public class LoginScreen {
 		lblNewLabel_1.setBounds(197, 109, 61, 16);
 		frame.getContentPane().add(lblNewLabel_1);
 	}
-	
-	//creates text fields
+
 	public void createUserNameTF() {
 		textField = new JTextField();
 		textField.setBounds(148, 61, 155, 26);
@@ -125,8 +102,6 @@ public class LoginScreen {
 		
 	}
 	
-	
-	//frame changers
 	public void signInPage()
 	{
 		frame.dispose();
@@ -153,8 +128,6 @@ public class LoginScreen {
 		
 	}
 	
-	//login button
-	//uses query to compare if username and password matches these varaibles in the database
 	public void loginButton()
 	{
 		try {
