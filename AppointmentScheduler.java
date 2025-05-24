@@ -1,10 +1,3 @@
-// AppointmentScheduler.java
-// Refactored version — variables, method names, and class structure updated for clarity
-// Original logic preserved
-
-// AppointmentScheduler.java
-// Refactored version - retains original logic with updated structure and naming
-
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -49,16 +42,11 @@ public class AppointmentScheduler {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public appointmentUI() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+	
 	void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
@@ -75,8 +63,7 @@ public class AppointmentScheduler {
 		createTimeLabel();	
 		test();
 	}
-	
-	//creates button	
+		
 	public void createAppointmentButton() {
 		scheduleButton = new JButton("schedule");
 		scheduleButton.setBounds(151, 222, 117, 29);
@@ -85,8 +72,6 @@ public class AppointmentScheduler {
 			public void actionPerformed(ActionEvent e) {
 				createAppointment();
 				
-				// TODO Auto-generated method stub
-				//send data to appointment table
 			}
 			
 		});
@@ -104,7 +89,6 @@ public class AppointmentScheduler {
 		
 	}
 	
-	//frame changer
 	public void homePage() {
 		frame.dispose();
 		VariousQueriesAndScannerFinalProject main = new VariousQueriesAndScannerFinalProject();
@@ -113,7 +97,6 @@ public class AppointmentScheduler {
 		
 	}
 	
-	//creates text field
 	public void createCustomerIDTF() {
 		customerIDTF = new JTextField();
 		customerIDTF.setBounds(151, 45, 130, 26);
@@ -138,7 +121,6 @@ public class AppointmentScheduler {
 	}
 	
 	
-	//creates labels
 	public void createCustomerIDLabel() {
 		customerIDLabel = new JLabel("Customer ID");
 		customerIDLabel.setBounds(171, 17, 97, 16);
