@@ -1,10 +1,3 @@
-// BankAccountManager.java
-// Refactored version — variables, method names, and class structure updated for clarity
-// Original logic preserved
-
-// BankAccountManager.java
-// Refactored version - retains original logic with updated structure and naming
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -27,9 +20,6 @@ public class BankAccountManager {
 	public int deposit;
 	private JTextField customerIDTF;
 
-	/**
-	 * Launch the application.
-	 */
 	public static void main(String[] args) {
         // Entry point of BankAccountManager {
 		EventQueue.invokeLater(new Runnable() {
@@ -44,23 +34,16 @@ public class BankAccountManager {
 		});
 	}
 
-	/**
-	 * Create the application.
-	 */
 	public bankAccountUI() {
 		initialize();
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
 	void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		//calls functions
 		createTotalLabel();
 		totalAmount();
 		createDepositLabel();
@@ -74,8 +57,6 @@ public class BankAccountManager {
 		createCustomerIDTF();
 	}
 	
-	
-	//creates Labels
 	public void createTotalLabel()
 	{
 		JLabel moneyTotal = new JLabel("Total");
@@ -94,7 +75,6 @@ public class BankAccountManager {
 		withDrawlLabel.setBounds(174, 183, 88, 16);
 		frame.getContentPane().add(withDrawlLabel);
 	}
-	//total amount LABEL function
 	public void totalAmount() {
 		//makes label
 		totalLabel = new JLabel("Total Amount: " + Integer.toString(total));
@@ -111,8 +91,6 @@ public class BankAccountManager {
 		customerIDTF.setColumns(10);
 	}
 	
-	
-	//Creates buttons
 	public void createDepositButton() {
 
 		JButton depositBT = new JButton("Deposit");
@@ -182,9 +160,6 @@ public class BankAccountManager {
 		
 	}
 	
-	
-	
-	//frame changer
 	public void signInPage()
 	{
 		frame.dispose();
@@ -194,15 +169,10 @@ public class BankAccountManager {
 		
 	}
 	
-	
-	
-	//this function takes all the updates after submitting deposits/withdrawls and updates the total amount label with changes
 	public void updateTotalLabel() {
 		totalLabel.setText("Total Amount: " + total);
 	}
 	
-	
-	//Creates text fields
 	public void createDepositTF() {
 		textField = new JTextField();
 		textField.setBounds(133, 107, 142, 26);
